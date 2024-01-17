@@ -9,7 +9,7 @@ struct 👆MeasureView: View {
             content.add(self.model.setupRootEntity())
             
             let resultLabelEntity = attachments.entity(for: Self.attachmentID)!
-            resultLabelEntity.components.set(📍HeadAnchorComponent())
+            resultLabelEntity.components.set(🧑HeadTrackingComponent())
             resultLabelEntity.name = 🧩Name.resultLabel
             self.model.rootEntity.addChild(resultLabelEntity)
         } update: { _, attachments in

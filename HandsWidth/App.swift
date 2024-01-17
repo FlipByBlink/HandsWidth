@@ -15,7 +15,7 @@ struct HandsWidthApp: App {
         .defaultSize(width: 400, height: 260)
     }
     init() {
-        📍HeadAnchorComponent.registerComponent()
-        📍HeadAnchorSystem.registerSystem()
+        🧑HeadTrackingComponent.registerComponent()
+        🧑HeadTrackingSystem.registerSystem()
     }
 }

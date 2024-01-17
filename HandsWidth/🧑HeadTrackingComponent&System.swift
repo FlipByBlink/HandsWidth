@@ -2,11 +2,11 @@ import RealityKit
 import ARKit
 import SwiftUI
 
-struct 📍HeadAnchorComponent: Component, Codable {
+struct 🧑HeadTrackingComponent: Component, Codable {
     init() {}
 }
 
-struct 📍HeadAnchorSystem: System {
+struct 🧑HeadTrackingSystem: System {
     private let session = ARKitSession()
     private let provider = WorldTrackingProvider()
     
@@ -28,7 +28,7 @@ struct 📍HeadAnchorSystem: System {
         guard let deviceAnchor = self.provider.queryDeviceAnchor(atTimestamp: CACurrentMediaTime()) else {
             return
         }
-        for entity in context.entities(matching: .init(where: .has(📍HeadAnchorComponent.self)),
+        for entity in context.entities(matching: .init(where: .has(🧑HeadTrackingComponent.self)),
                                        updatingSystemWhen: .rendering) {
             if entity.name == 🧩Name.resultLabel {
                 entity.look(at: Transform(matrix: deviceAnchor.originFromAnchorTransform).translation,
